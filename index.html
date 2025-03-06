@@ -1,18 +1,26 @@
-<audio controls autoplay>
-  <source src="https://thetms.ru/music/channel.ogg" type="audio/ogg">  
-</audio>
-
-<button style="font-size:200px">ПАУЗА!!!!</button>
-
-<script defer>
-  (() => {
-    const audio = document.querySelector('audio');
-    const button = document.querySelector('button');
-    if (!audio || !button) return
-
-    audio.play()
-    // audio.addEventListener('pause', audio.play)
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>плауерские шалости</title>
+  </head>
+  <body>
+    <audio>
+      <source src="https://thetms.ru/music/channel.ogg" type="audio/ogg">  
+    </audio>
     
-    button.addEventListener('click', audio.toggle)
-  })()
-</script>
+    <button style="font-size:200px">ПАУЗА!!!!</button>
+    
+    <script defer>
+      (() => {
+        const audio = document.querySelector('audio');
+        const button = document.querySelector('button');
+        if (!audio || !button) return
+    
+        audio.play()
+        // audio.addEventListener('pause', audio.play)
+        
+        button.addEventListener('click', () => audio.paused ? audio.play() : audio.pause())
+      })()
+      </script>
+  </body>
+</html>
