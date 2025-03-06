@@ -1,0 +1,18 @@
+<audio controls>
+  <source src="https://thetms.ru/music/channel.ogg" type="audio/ogg">  
+</audio>
+
+<button style="font-size:200px">ПАУЗА!!!!</button>
+
+<script defer>
+  (() => {
+    const audio = document.querySelector('audio');
+    const button = document.querySelector('button');
+    if (!audio || !button) return
+
+    audio.play()
+    // audio.addEventListener('pause', audio.play)
+    
+    button.addEventListener('click', audio.toggle)
+  })()
+</script>
