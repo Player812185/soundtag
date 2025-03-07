@@ -2,7 +2,7 @@
   <source src="https://thetms.ru/music/channel.ogg" type="audio/ogg">  
 </audio>
 
-<button style="font-size:200px"></button>
+<button id="button"></button>
 
 <script defer>
   (() => {
@@ -13,7 +13,26 @@
     audio.play()
     audio.addEventListener('pause', audio.play)
     
-    button.addEventListener('click', () => audio.paused ? audio.play() : audio.pause())
+    button.addEventListener('click', () => audio.paused ? audio.play() : audio.pause()) 
+
+// Для всего документа
+function openFullscreen() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } 
+  // Для старых браузеров
+  else if (document.documentElement.mozRequestFullScreen) { // Firefox
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+    document.documentElement.msRequestFullscreen();
+  }
+}
+
+// Для конкретного элемента (например, видео или контейнера)
+const element = document.getElementById("button");
+element.requestFullscreen();
   })()
 </script>
 <style>
@@ -22,5 +41,6 @@
     inset: 0;
     display: block;
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4bGFjk2ZT6v6A94Yhc_5V_68rF5Zd2LHUrw&s');
+    background-size: cover;
   }
 </style>
