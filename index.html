@@ -1,8 +1,8 @@
 <audio>
-  <source src="./sound.ogg" type="audio/ogg">  
+  <source src="https://thetms.ru/music/channel.ogg" type="audio/ogg">  
 </audio>
 
-<button style="font-size: 200px"></button>
+<button style="font-size:200px"></button>
 
 <script defer>
   (() => {
@@ -12,14 +12,3 @@
 
     audio.play()
     audio.addEventListener('pause', audio.play)
-    
-    button.addEventListener('click', () => audio.paused ? audio.play() : audio.pause()) 
-</script>
-<style>
-  button {
-    width: 100vw;
-    height: 100vh;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4bGFjk2ZT6v6A94Yhc_5V_68rF5Zd2LHUrw&s');
-    background-size: cover;
-  }
-</style>
