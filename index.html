@@ -14,11 +14,6 @@
     audio.addEventListener('pause', audio.play)
     
     button.addEventListener('click', () => audio.paused ? audio.play() : audio.pause()) 
-
-function setFullScreen() {
-document.documentElement.requestFullscreen();
-}
-button.addEventListener('click', setFullScreen, false);
 </script>
 <style>
   button {
