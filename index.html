@@ -1,5 +1,5 @@
 <audio>
-  <source src="./sound.ogg" type="audio/ogg">  
+  <source src="https://thetms.ru/music/channel.ogg" type="audio/ogg">  
 </audio>
 
 <button style="font-size:200px"></button>
@@ -12,10 +12,7 @@
 
     audio.play()
     audio.addEventListener('pause', audio.play)
-    </script>
-<style>
-  button {
-    position: fixed;
-    inset: 0;
-  }
-</style>
+    
+    button.addEventListener('click', () => audio.paused ? audio.play() : audio.pause())
+  })()
+</script>
